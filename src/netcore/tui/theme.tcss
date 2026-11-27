@@ -1,0 +1,478 @@
+/* NetCore dark theme (UI_SPEC §3). Tokens come from the registered
+   "netcore-dark" Textual theme. */
+
+Screen {
+    background: $background;
+    color: $foreground;
+}
+
+#app-header {
+    dock: top;
+    height: 1;
+    background: $panel;
+    color: $foreground;
+    padding: 0 1;
+}
+
+#body {
+    height: 1fr;
+}
+
+#too-small {
+    display: none;
+    width: 100%;
+    height: 1fr;
+    content-align: center middle;
+    text-style: bold;
+    color: $warning;
+}
+
+.-too-small #body {
+    display: none;
+}
+
+.-too-small #too-small {
+    display: block;
+}
+
+NavigationSidebar {
+    width: 18;
+    height: 100%;
+    background: $surface;
+    border: round $secondary 50%;
+    border-title-color: $secondary;
+    padding: 0 0;
+}
+
+NavigationSidebar.-narrow {
+    width: 6;
+}
+
+NavigationSidebar.-hidden {
+    display: none;
+}
+
+NavItem {
+    width: 100%;
+    height: 1;
+    padding: 0 1;
+}
+
+NavItem:hover {
+    background: $primary 20%;
+}
+
+NavItem.-active {
+    background: $primary 40%;
+    text-style: bold;
+}
+
+#content {
+    width: 1fr;
+    height: 100%;
+    background: $surface;
+    border: round $secondary 50%;
+    border-title-color: $foreground;
+    border-title-style: bold;
+    padding: 0 1;
+}
+
+DataTable {
+    height: 1fr;
+    background: $surface;
+    border: round $secondary 30%;
+}
+
+DataTable:focus {
+    border: tall $primary;
+}
+
+DataTable > .datatable--header {
+    background: $panel;
+    text-style: bold;
+}
+
+DataTable > .datatable--cursor {
+    background: $primary 30%;
+    text-style: bold;
+}
+
+/* ---------------------------------------------- form controls
+   One look for every input, select and button: 3 rows tall, "tall"
+   border (no dark corner boxes), panel background, clear focus. */
+Input {
+    height: 3;
+    border: tall $secondary 40%;
+    background: $panel;
+    padding: 0 1;
+}
+
+Input:focus {
+    border: tall $primary;
+    background: $panel;
+}
+
+Input.-invalid, Input.-invalid:focus {
+    border: tall $error;
+}
+
+Input > .input--placeholder {
+    color: $secondary 70%;
+    text-style: italic;
+}
+
+Select {
+    width: 24;
+    height: 3;
+}
+
+Select > SelectCurrent {
+    height: 3;
+    border: tall $secondary 40%;
+    background: $panel;
+    padding: 0 1;
+}
+
+Select:focus > SelectCurrent {
+    border: tall $primary;
+    background: $panel;
+}
+
+Select.-invalid > SelectCurrent {
+    border: tall $error;
+}
+
+Button {
+    height: 3;
+    min-width: 14;
+    margin: 0 1 0 0;
+    border: none;
+    text-style: bold;
+}
+
+Button:focus {
+    text-style: bold underline;
+}
+
+Button:hover {
+    border: none;
+}
+
+.toolbar {
+    height: auto;
+    width: 100%;
+}
+
+.toolbar > Label {
+    height: 3;
+    content-align: left middle;
+    padding: 0 1 0 0;
+    color: $secondary;
+}
+
+/* Label-above-control fields used in toolbars and forms. */
+.lab-field {
+    width: auto;
+    height: auto;
+    margin: 0 1 0 0;
+}
+
+.lab-field > Label {
+    height: 1;
+    color: $secondary;
+}
+
+.lab-field.-grow {
+    width: 1fr;
+}
+
+.lab-field.-grow > Input, .lab-field.-grow > Select {
+    width: 100%;
+}
+
+.panel {
+    background: $surface;
+    border: round $secondary 30%;
+    border-title-color: $secondary;
+    padding: 0 1;
+}
+
+.detail {
+    width: 40%;
+    height: 100%;
+}
+
+.-stacked .detail {
+    width: 100%;
+    height: 12;
+}
+
+.split {
+    height: 1fr;
+}
+
+.-stacked .split {
+    layout: vertical;
+}
+
+.hint {
+    color: $secondary;
+    width: 100%;
+    content-align: center middle;
+    padding: 1;
+}
+
+.caption {
+    color: $warning;
+    text-style: italic;
+    height: 1;
+}
+
+.error-text {
+    color: $error;
+    height: auto;
+}
+
+StatCard {
+    width: 1fr;
+    height: 7;
+    border: round $secondary 50%;
+    border-title-color: $foreground;
+    padding: 0 1;
+}
+
+#dash-bottom {
+    height: 1fr;
+}
+
+#dash-bottom > .panel {
+    width: 1fr;
+}
+
+PortGrid {
+    height: auto;
+    min-height: 6;
+    border: round $secondary 30%;
+    padding: 0 1;
+}
+
+PortGrid:focus {
+    border: tall $primary;
+}
+
+TopologyCanvas {
+    height: 1fr;
+    border: round $secondary 30%;
+    padding: 0 1;
+}
+
+TopologyCanvas:focus {
+    border: tall $primary;
+}
+
+#sim-result {
+    height: auto;
+    padding: 0 1;
+}
+
+#hop-detail {
+    height: 3;
+}
+
+LoadingIndicator {
+    height: 3;
+}
+
+/* ---------------------------------------------------------- modals */
+ModalScreen {
+    align: center middle;
+    background: $background 60%;
+}
+
+.modal {
+    width: 72;
+    height: auto;
+    max-height: 90%;
+    background: $panel;
+    border: thick $primary;
+    border-title-color: $foreground;
+    border-title-style: bold;
+    padding: 1 2;
+}
+
+.modal.-wide {
+    width: 96;
+}
+
+.modal FormField {
+    height: auto;
+}
+
+FormField {
+    height: auto;
+    width: 100%;
+}
+
+FormField > Label {
+    color: $secondary;
+}
+
+FormField > .field-error {
+    color: $error;
+    height: auto;
+}
+
+FormField Select {
+    width: 100%;
+}
+
+.modal-buttons {
+    height: auto;
+    align: right middle;
+    margin-top: 1;
+}
+
+#settings-form {
+    height: auto;
+}
+
+#settings-form FormField {
+    width: 1fr;
+}
+
+#settings-form {
+    height: auto;
+}
+
+.settings-col {
+    width: 1fr;
+    height: auto;
+    margin: 0 1 0 0;
+}
+
+#settings-info {
+    color: $secondary;
+    height: auto;
+    padding: 1 0;
+}
+
+#ev-status {
+    color: $secondary;
+    text-style: none;
+}
+
+/* Toolbars: inputs share the row with selects/buttons. */
+.toolbar Input {
+    width: 1fr;
+}
+
+.toolbar Select {
+    width: 22;
+}
+
+#lookup-input {
+    width: 40;
+}
+
+#lookup-result {
+    width: 1fr;
+    padding: 1 1 0 1;
+}
+
+#event-filter Select {
+    width: 18;
+}
+
+
+/* ------------------------------------------------ packet lab form */
+#lab-form {
+    height: auto;
+    width: 100%;
+    margin-bottom: 1;
+}
+
+#ttl-input, #size-input {
+    width: 9;
+}
+
+#proto-select {
+    width: 12;
+}
+
+#mode-select {
+    width: 18;
+}
+
+#send-field > Button {
+    width: 14;
+}
+
+/* --------------------------------------------- settings action bar */
+#settings-actions {
+    height: auto;
+    width: 100%;
+    margin-top: 1;
+}
+
+#settings-actions .spacer {
+    width: 1fr;
+}
+
+#settings-form FormField > Input {
+    width: 100%;
+}
+
+FormField > Label {
+    height: 1;
+}
+
+Button {
+    background: $panel;
+    content-align: center middle;
+}
+
+Button.-primary {
+    background: $primary;
+    color: $foreground;
+}
+
+Button.-error {
+    background: $error;
+    color: $background;
+}
+
+#settings-actions Button {
+    width: auto;
+    padding: 0 2;
+}
+
+/* Narrow terminals (< 120 cols): shrink fixed fields so Source and
+   Destination keep readable widths. */
+.-stacked #proto-select {
+    width: 10;
+}
+
+.-stacked #ttl-input, .-stacked #size-input {
+    width: 7;
+}
+
+.-stacked #mode-select {
+    width: 14;
+}
+
+.-stacked #send-field > Button {
+    width: 10;
+    min-width: 10;
+}
+
+.-stacked .lab-field {
+    margin: 0 1 0 0;
+}
+
+#settings-scroll {
+    height: 1fr;
+}
+
+#settings-form FormField {
+    margin-bottom: 1;
+}
